@@ -8,6 +8,8 @@ namespace PessoaIdadeSigno
 {
     class Program
     {
+        // Em POO sempre procura trabalhar com abstração como a inteface ao inves de classe
+        // Liguagem intermediaria que a plataforma .Net transforma o código se chama JIT 
         static void Main(string[] args)
         {
             int quantidadePessoa;
@@ -23,12 +25,12 @@ namespace PessoaIdadeSigno
             {
                 Pessoa pessoa = new Pessoa();
                 Console.WriteLine("Digite o nome da " + i + " pessoa");
-                pessoa.Name = Console.ReadLine();
+                pessoa.Nome = Console.ReadLine();
 
                 Console.WriteLine("Digite a data de Nascimento");
                 pessoa.DataNascimento = Console.ReadLine();
 
-                while (!Pessoa.validaData(pessoa.DataNascimento))
+                while (!Pessoa.ValidaData(pessoa.DataNascimento))
                 {
                     Console.WriteLine("Data incorreta");
                     Console.WriteLine("Irá tentar novamente S/N?");
@@ -40,7 +42,7 @@ namespace PessoaIdadeSigno
 
                 }
 
-                if (Pessoa.validaData(pessoa.DataNascimento))
+                if (Pessoa.ValidaData(pessoa.DataNascimento))
                 {
                     Console.WriteLine("Pessoa Salva");
                     pessoas.Add(pessoa);
@@ -55,9 +57,9 @@ namespace PessoaIdadeSigno
 
             foreach (Pessoa p in pessoas)
             {
-                Console.WriteLine("A pessoa " + p.Name);
-                Console.WriteLine("Tem: " + p.calculaIdade(p.DataNascimento));
-                Console.WriteLine("Signo da pessoa: " + Signo.NomeSigno(p.DataNascimento));
+                Console.WriteLine("A pessoa " + p.Nome);
+                Console.WriteLine("Tem: " + p.CalculaIdade());
+                Console.WriteLine("Signo da pessoa: " + p.NomeSigno());
             }
 
             Console.ReadKey();
