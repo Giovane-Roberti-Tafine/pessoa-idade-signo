@@ -30,7 +30,7 @@ namespace PessoaIdadeSigno
                 Console.WriteLine("Digite a data de Nascimento");
                 pessoa.DataNascimento = Console.ReadLine();
 
-                while (!Pessoa.ValidaData(pessoa.DataNascimento))
+                while (!Funcoes.ValidaData(pessoa.DataNascimento))
                 {
                     Console.WriteLine("Data incorreta");
                     Console.WriteLine("Irá tentar novamente S/N?");
@@ -42,7 +42,7 @@ namespace PessoaIdadeSigno
 
                 }
 
-                if (Pessoa.ValidaData(pessoa.DataNascimento))
+                if (Funcoes.ValidaData(pessoa.DataNascimento))
                 {
                     Console.WriteLine("Pessoa Salva");
                     pessoas.Add(pessoa);

@@ -34,7 +34,7 @@ namespace PessoaIdadeSigno
 
         protected string NomeSigno(string data)
         {
-            if (Pessoa.ValidaData(data))
+            if (Funcoes.ValidaData(data))
             {
                 var apenasNumeros = new Regex(@"[^\d]");
                 string dataConvertida = apenasNumeros.Replace(data, "");
