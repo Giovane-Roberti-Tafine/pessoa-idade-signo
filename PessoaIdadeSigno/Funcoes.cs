@@ -25,7 +25,7 @@ namespace PessoaIdadeSigno
             //dataConvertida = string.Join("", Regex.Split(data, @"[^\d]"));
             //dataConvertida = new string(data.Where(Char.IsDigit).ToArray());
             str.Clear();
-            dataConvertida = str.Append(data.Where(Char.IsDigit).ToArray()).ToString();
+            dataConvertida = SomenteNumeros(data);
 
             int ano = int.Parse(dataConvertida.Substring(4, 4));
             int mes = int.Parse(dataConvertida.Substring(2, 2));
@@ -36,5 +36,11 @@ namespace PessoaIdadeSigno
                 return false;
 
         }
+
+        public static string SomenteNumeros(string info)
+        {
+            str.Clear();
+            return str.Append(info.Where(Char.IsDigit).ToArray()).ToString();
+        } 
     }
 }

@@ -12,7 +12,6 @@ namespace PessoaIdadeSigno
         public string DataNascimento { get; set; }
         public string Nome { get; set; }
 
-        private static StringBuilder str = new StringBuilder();
 
         public string CalculaIdade()
         {
@@ -20,8 +19,8 @@ namespace PessoaIdadeSigno
 
             //var apenasNumeros = new Regex(@"[^\d]");
             //string dataConvertida = apenasNumeros.Replace(DataNascimento, "");
-            str.Clear();
-            string dataConvertida = str.Append(DataNascimento.Where(char.IsDigit).ToArray()).ToString();
+            
+            string dataConvertida = Funcoes.SomenteNumeros(DataNascimento);
             
             DateTime dateAtual = DateTime.Now;
             

@@ -36,8 +36,7 @@ namespace PessoaIdadeSigno
         {
             if (Funcoes.ValidaData(data))
             {
-                var apenasNumeros = new Regex(@"[^\d]");
-                string dataConvertida = apenasNumeros.Replace(data, "");
+                string dataConvertida = Funcoes.SomenteNumeros(data);
 
                 int ano = int.Parse(dataConvertida.Substring(4, 4));
                 int mes = int.Parse(dataConvertida.Substring(2, 2));
